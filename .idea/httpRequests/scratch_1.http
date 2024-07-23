@@ -1,0 +1,119 @@
+#1.  查询所有索引：
+GET http://127.0.0.1:9200/_cat/indices?v
+
+###
+
+
+
+//删除索引
+DELETE  http://127.0.0.1:9200/crmkbsnew1
+
+
+###
+
+
+
+
+
+//旧的
+GET http://127.0.0.1:9200/crmkbsnew1/_mapping
+
+<> 2024-07-22T192642.200.json
+
+
+
+###
+//查询全部
+GET http://127.0.0.1:9200/crmkbsnew1/_search
+
+
+
+###
+
+#5：为crmkbsnew1新增contentHtml2、keyWords2字段
+#说明：新增字段后可立即添加测试数据，且新增字段后不会对之前的数据存在影响。
+#PUT http://127.0.0.1:9200/crmkbsnew1/_mapping
+#Content-Type: application/json;charset=UTF-8
+#
+#{
+# 
+#  "properties":{
+#    "contentHtml3":{
+#      "type": "text",
+#      "analyzer":"ik_max_word",
+#      "search_analyzer":"ik_synonyms_search_analyzer" 
+#    },
+#    "keyWords3": {
+#      "type": "text",
+#      "analyzer":"ik_max_word",
+#      "search_analyzer":"ik_synonyms_search_analyzer" 
+#    }
+#  }
+#}
+
+
+
+
+###
+#PUT http://127.0.0.1:9200/crmkbsnew1/_settings
+#Content-Type: application/json;charset=UTF-8
+#
+#{
+#
+#    "analysis": {
+#      "filter": {
+#        "ik_synonyms_filter": {
+#          "type": "synonym_graph",
+#          "updateable": true,
+#          "synonyms_path": "analysis/synonyms.txt"
+#        }
+#      },
+#      "analyzer": {
+#        "ik_synonyms_search_analyzer": {
+#          "tokenizer": "ik_max_word",
+#          "filter": [
+#            "lowercase",
+#            "ik_synonyms_filter"
+#          ]
+#        }
+#      }
+#    }
+#  
+#}
+
+
+
+
+
+
+
+
+###
+
+GET  http://127.0.0.1:9200/crmkbsnew1
+Content-Type: application/json;charset=UTF-8
+
+<> 2024-07-22T192707.200.json
+
+
+
+
+
+
+###
+
+// 测试2
+POST http://127.0.0.1:9200/crmkbsnew1/_search
+Content-Type: application/json;charset=UTF-8
+
+{
+  "query":{
+    "match":{
+      "title":"857505"
+    }
+  }
+}
+
+
+
+###

@@ -1,0 +1,113 @@
+# 查询全部
+GET 127.0.0.1:9200/crmkbsnew1/_search
+
+
+###
+
+#1.  查询所有索引：
+GET 127.0.0.1:9200/_cat/indices?v
+
+###
+
+#1.  查询所有索引：
+GET 127.0.0.1:9200/crmkbsnew1/_doc/375648
+
+
+
+
+###
+
+
+
+#条件查询
+POST http://127.0.0.1:9200/crmkbsnew2/_search
+Content-Type: application/json;charset=UTF-8
+
+{
+"query":{
+        "match":{ "title":"长江黄河" }
+    }
+}
+
+
+###
+
+# 查询全部
+GET 127.0.0.1:9200/crmkbsnew1
+
+
+###
+
+
+# 分词器 standard 默认， ik分词器：ik_smart 和 ik_max_word
+POST http://10.132.21.223:19200/crmkbs1/_analyze
+Content-Type: application/json;charset=UTF-8
+
+{
+  "analyzer":"text_complex",
+  "text":"首都857505"
+}
+
+<> 2024-07-23T141536.200.json
+<> 2024-07-23T102725.200.json
+<> 2024-07-23T101653.200.json
+<> 2024-07-23T101559.200.json
+<> 2024-07-23T101455.400.json
+
+
+
+###
+
+
+# 分词器 simple 默认
+POST 127.0.0.1:9200/crmkbsnew2/_analyze
+Content-Type: application/json;charset=UTF-8
+
+{
+  "analyzer":"ik_max_word",
+  "text":"重庆阿斯顿发送到发301866"
+}
+
+
+
+###
+
+# 分词器 ik_max_word 默认
+POST 127.0.0.1:9200/crmkbsnew1/_analyze
+Content-Type: application/json;charset=UTF-8
+
+{
+  "analyzer":"ik_max_word",
+  "text":"重庆阿斯顿发送到发301866"
+}
+
+
+###
+
+
+
+# 分词器 ik_max_word ik_smart 
+POST 127.0.0.1:9200/_analyze
+Content-Type: application/json;charset=UTF-8
+
+{
+  "analyzer":"ik_smart",
+  "text":"长江黄河121212112"
+}
+
+
+###
+
+
+//查看Template的配置
+GET 127.0.0.1:9200/_scripts/template_name
+
+
+###
+
+//mapping
+GET 127.0.0.1:9200/crmkbsnew1/_mapping
+
+
+
+###

@@ -1,0 +1,30 @@
+//设置别名
+POST http://127.0.0.1:9200/_aliases
+Content-Type: application/json;charset=UTF-8
+
+{
+  "actions": [
+    {
+      "add": {
+        "index": "crmkbsnew1",
+        "alias": "crmkbsnew_actions"
+      }
+    }
+  ]
+}
+
+###
+
+
+#6.4：将old数据迁移到new
+#注意：执行此步骤前提是设置新索引new禁止脏字段自动加入Mapping，否则将没有任何作用 
+POST http://127.0.0.1:9200/_reindex
+Content-Type: application/json;charset=UTF-8
+
+{
+  "source": {"index": "crmkbsnew1"},
+  "dest": {"index": "crmkbsnew2"}
+}
+
+
+

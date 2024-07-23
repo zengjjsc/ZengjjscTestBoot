@@ -1,0 +1,315 @@
+POST http://127.0.0.1:9200/crmkbsnew2/_close
+
+
+
+
+
+###
+
+POST http://127.0.0.1:9200/crmkbsnew2/_open
+
+
+
+
+###
+
+
+PUT http://127.0.0.1:9200/crmkbsnew2/_settings
+Content-Type: application/json;charset=UTF-8
+
+{
+  "analysis": {
+    "filter": {
+ 
+      "stop_filter": {
+        "ignore_case": "true",
+        "lenient": true,
+        "updateable": true,
+        "type": "stop",
+        "stopwords_path": "stopwords.txt"
+      },
+      "synonym_filter": {
+        "lenient": true,
+        "updateable": true,
+        "ignore_case": "true",
+        "expand": "true",
+        "type": "synonym_graph",
+        "synonyms_path": "synonyms.txt"
+      }
+    },
+    "analyzer": {
+      "text_complex": {
+        "filter": [
+          "stop_filter",
+          "synonym_filter",
+          "lowercase"
+        ],
+        "type": "custom",
+        "tokenizer": "ik_smart"
+      },
+      "text_complex_index": {
+        "filter": [
+          "pinyin_filter",
+          "stop_filter",
+          "synonym_filter",
+          "lowercase"
+        ],
+        "type": "custom",
+        "tokenizer": "ik_max_word"
+      }
+    }
+  }
+}
+
+
+
+
+###
+
+
+#新建索引crmkbsnew2 synonym_graph
+PUT http://127.0.0.1:9200/crmkbsnew2
+Content-Type: application/json;charset=UTF-8
+
+{
+  "settings": {
+    "analysis": {
+      "filter": {
+    
+        "stop_filter": {
+          "ignore_case": "true",
+          "type": "stop",
+          "lenient": true,
+          "updateable":true,
+          "stopwords_path": "analysis/stopwords.txt"
+        },
+        "synonym_filter": {
+          "ignore_case": "true",
+          "expand": "true",
+          "type":"synonym_graph",
+          "lenient": true,
+          "updateable":true,
+          "synonyms_path":"analysis/synonyms.txt"
+        }
+      },
+      "analyzer": {
+        "text_complex": {
+          "filter": [
+            "stop_filter",
+            "synonym_filter",
+            "lowercase"
+          ],
+          "type": "custom",
+          "tokenizer": "standard"
+        },
+        "text_complex_index": {
+          "filter": [
+            "stop_filter", 
+            "lowercase"
+          ],
+          "type": "custom",
+          "tokenizer": "ik_max_word"
+        }
+      }
+    }
+  },
+  "mappings": {
+    "properties": {
+      "content": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "contentHtml": {
+        "type": "text",
+        "analyzer": "text_complex_index",
+        "search_analyzer": "text_complex"
+      },
+      "createCode": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "createName": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "createtime": {
+        "type": "long"
+      },
+      "directoryId": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "keyWords": {
+        "type": "text",
+        "analyzer": "text_complex_index",
+        "search_analyzer": "text_complex"
+      },
+      "organId": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "organName": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "pageView": {
+        "type": "long"
+      },
+      "pointId": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "priority": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "remark": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "reviewReason": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "status": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "title": {
+        "type": "text",
+        "analyzer": "text_complex_index",
+        "search_analyzer": "text_complex"
+      },
+      "validEndDate": {
+        "type": "long"
+      },
+      "validStartDate": {
+        "type": "long"
+      }
+    }
+  }
+}
+
+
+
+
+###
+
+
+
+//旧的
+GET http://127.0.0.1:9200/crmkbsnew2/_mapping
+
+
+###
+//查询全部
+GET http://127.0.0.1:9200/crmkbsnew2/_search
+
+
+
+###
+
+
+// 测试2
+
+POST http://127.0.0.1:9200/crmkbsnew2/_search
+Content-Type: application/json;charset=UTF-8
+
+/*{
+  "query": {
+    "fuzzy": {
+      "title": {
+        "value": "夏",
+        "fuzziness": 2
+      }
+    }
+  }
+}*/
+
+
+{
+  "query": {
+    "match": {
+      "title": "华夏"
+    }
+  }
+}
+
+
+
+
+
+
+
+###
+// 跟新同义词
+POST 127.0.0.1:9200/crmkbsnew2/_reload_search_analyzers
+
+
+###
+
+
+//删除索引
+DELETE http://127.0.0.1:9200/crmkbsnew2
+
+<> 2024-07-23T102658.200.json
+
+
+
+
+########

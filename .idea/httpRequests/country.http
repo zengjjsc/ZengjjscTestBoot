@@ -1,0 +1,71 @@
+// 4.5.3 查询时使用同义词
+// 在ES内置的分词过滤器中还有个分词过滤器叫作synonym_graph，它是一种支持查询时用户自定义同义词的分词过滤器。
+
+// 示例
+# ① 创建索引
+PUT 127.0.0.1:9200/country
+Content-Type: application/json;charset=UTF-8
+
+{
+  "settings": {
+    "analysis":{
+      "filter":{
+        "ik_synonyms_filter":{ 
+          "type":"synonym_graph",
+          "updateable":true, 
+          "synonyms_path":"analysis/synonyms.txt"
+        }
+      },
+      "analyzer":{
+        "ik_synonyms_search_analyzer":{
+          "tokenizer":"ik_max_word",
+          "filter":[
+            "lowercase",  
+            "ik_synonyms_filter"  
+          ]
+        }
+      }
+    }
+  },
+  "mappings":{
+    "properties":{
+      "name":{
+        "type":"text",
+        "analyzer":"ik_max_word",  
+        "search_analyzer":"ik_synonyms_search_analyzer" 
+      }
+    }
+  }
+}
+
+<> 2024-07-22T112629.200.json
+
+###
+
+GET 127.0.0.1:9200/country
+
+<> 2024-07-22T123613.200.json
+
+###
+
+
+// ② 查看分词结果
+POST 127.0.0.1:9200/country/_analyze
+Content-Type: application/json;charset=UTF-8
+
+{
+  "analyzer": "ik_synonyms_search_analyzer",
+  "text":"中国是历史悠久的国家"
+}
+
+<> 2024-07-22T124205.200.json
+<> 2024-07-22T124142.406.json
+<> 2024-07-22T124126.400.json
+###
+
+
+POST 127.0.0.1:9200/country/_reload_search_analyzers
+
+<> 2024-07-22T125822.200.json
+<> 2024-07-22T125816.200.json
+<> 2024-07-22T125712.200.json

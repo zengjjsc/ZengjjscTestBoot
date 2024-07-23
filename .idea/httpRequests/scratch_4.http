@@ -1,0 +1,245 @@
+//删除索引
+DELETE http://10.132.21.221:19200/crmkbsnew2?pretty
+
+
+
+###
+
+#1.  查询所有索引：
+GET http://10.132.21.221:19200/_cat/indices?v
+
+<> 2024-07-23T141329.200.txt
+
+
+
+
+###
+GET http://10.132.21.222:19200/_cat/indices?v
+
+<> 2024-07-23T141322.200.txt
+<> 2024-07-23T140728.200.txt
+
+
+###
+GET http://10.132.21.223:19200/_cat/indices?v
+
+
+
+###
+
+# 查看配置
+GET http://10.132.21.221:19200/crmkbs?pretty
+
+<> 2024-07-23T140830.200.json
+
+
+
+###
+
+//查询全部
+GET http://10.132.21.221:19200/crmkbs1/_search
+
+<> 2024-07-23T141436.200.json
+<> 2024-07-23T111729.200.json
+
+
+
+###
+POST http://10.132.21.221:19200/_reindex?pretty
+Content-Type: application/json;charset=UTF-8
+
+{
+  "source": {"index": "crmkbs"},
+  "dest":   {"index": "crmkbs1"}
+}
+
+<> 2024-07-23T141415.200.json
+
+
+###
+//新建索引crmkbsnew2 synonym_graph
+PUT http://10.132.21.221:19200/crmkbs1?pretty
+Content-Type: application/json;charset=UTF-8
+
+{
+  "settings": {
+    "analysis": {
+      "filter": {
+
+        "stop_filter": {
+          "ignore_case": "true",
+          "type": "stop",
+          "lenient": true,
+          "updateable":true,
+          
+          "stopwords": [" "]
+        },
+        "synonym_filter": {
+          "ignore_case": "true",
+          "expand": "true",
+          "type":"synonym_graph",
+          "lenient": true,
+          "updateable":true,
+          "synonyms":[
+            "北京,首都,京城,北平,上面,京都",
+            "中国,华夏,大夏,天朝,国家,祖国",
+            "2年半,2.5,2点5",
+            "上班 => 工作,干活",
+            "吃稀饭,吃米汤 => 吃饭",
+            "土豆,马铃薯",
+            "番茄,西红柿",
+            "电话,热线"
+          ]
+        }
+      },
+      "analyzer": {
+        "text_complex": {
+          "filter": [
+            "stop_filter",
+            "synonym_filter",
+            "lowercase"
+          ],
+          "type": "custom",
+          "tokenizer": "standard"
+        },
+        "text_complex_index": {
+          "filter": [
+            "stop_filter",
+            "lowercase"
+          ],
+          "type": "custom",
+          "tokenizer": "standard"
+        }
+      }
+    }
+  },
+  "mappings": {
+    "properties": {
+      "content": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "contentHtml": {
+        "type": "text",
+        "analyzer": "text_complex_index",
+        "search_analyzer": "text_complex"
+      },
+      "createCode": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "createName": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "createtime": {
+        "type": "long"
+      },
+      "directoryId": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "keyWords": {
+        "type": "text",
+        "analyzer": "text_complex_index",
+        "search_analyzer": "text_complex"
+      },
+      "organId": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "organName": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "pointId": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "priority": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "remark": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "reviewReason": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "status": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "title": {
+        "type": "text",
+        "analyzer": "text_complex_index",
+        "search_analyzer": "text_complex"
+      },
+      "validEndDate": {
+        "type": "long"
+      },
+      "validStartDate": {
+        "type": "long"
+      }
+    }
+  }
+}
+
+<> 2024-07-23T141301.200.json
