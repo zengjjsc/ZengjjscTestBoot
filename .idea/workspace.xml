@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e877dca7-b5af-483f-b5e9-1ba066d93678" name="更改" comment="">
+      <change beforePath="$PROJECT_DIR$/ZengjjscTestBootESDemo/src/main/java/cn/example/zengjjsc/es/dto/KbsPointEsModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/ZengjjscTestBootESDemo/src/main/java/cn/example/zengjjsc/es/dto/KbsPointEsModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ZengjjscTestBootESDemo/src/test/java/cn/example/zengjjsc/es/ElasticsearchClientCtrl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ZengjjscTestBootESDemo/src/test/java/cn/example/zengjjsc/es/ElasticsearchClientCtrl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ZengjjscTestBootESDemo/src/test/java/cn/example/zengjjsc/es/ElasticsearchTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ZengjjscTestBootESDemo/src/test/java/cn/example/zengjjsc/es/ElasticsearchTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="E:\Repository" />
+        <option name="mavenHome" value="D:\Tools\apache-maven-3.8.2" />
+        <option name="useMavenConfig" value="false" />
+        <option name="userSettingsFile" value="D:\Tools\apache-maven-3.8.2\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="enabledProfiles">
+      <list>
+        <option value="dev" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2jPZRSVVGoMFFZSWZM1cT0KqpwB" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "HTTP 请求.reindex | #1.executor": "Run",
+    "HTTP 请求.reindex | #2.executor": "Run",
+    "HTTP 请求.reindex | #3.executor": "Run",
+    "HTTP 请求.reindex | #4.executor": "Run",
+    "HTTP 请求.reindex | #5.executor": "Run",
+    "HTTP 请求.reindex | #6.executor": "Run",
+    "HTTP 请求.scratch | #1.executor": "Run",
+    "HTTP 请求.scratch | #10.executor": "Run",
+    "HTTP 请求.scratch | #11.executor": "Run",
+    "HTTP 请求.scratch | #2.executor": "Run",
+    "HTTP 请求.scratch | #3.executor": "Run",
+    "HTTP 请求.scratch | #4.executor": "Run",
+    "HTTP 请求.scratch | #6.executor": "Run",
+    "HTTP 请求.scratch | #7.executor": "Run",
+    "HTTP 请求.scratch | #8.executor": "Run",
+    "HTTP 请求.scratch | #9.executor": "Run",
+    "HTTP 请求.scratch_1 | #1.executor": "Run",
+    "HTTP 请求.scratch_1 | #2.executor": "Run",
+    "HTTP 请求.scratch_1 | #3.executor": "Run",
+    "HTTP 请求.scratch_1 | #4.executor": "Run",
+    "HTTP 请求.scratch_1 | #6.executor": "Run",
+    "HTTP 请求.scratch_2 | #1.executor": "Run",
+    "HTTP 请求.scratch_2 | #2.executor": "Run",
+    "HTTP 请求.scratch_2 | #3.executor": "Run",
+    "HTTP 请求.scratch_2 | #4.executor": "Run",
+    "HTTP 请求.scratch_2 | #5.executor": "Run",
+    "HTTP 请求.scratch_2 | #6.executor": "Run",
+    "HTTP 请求.scratch_2 | #7.executor": "Run",
+    "HTTP 请求.scratch_2 | #8.executor": "Run",
+    "HTTP 请求.scratch_2 | #9.executor": "Run",
+    "HTTP 请求.scratch_2中的所有.executor": "Run",
+    "HTTP 请求.scratch_3 | #1.executor": "Run",
+    "HTTP 请求.scratch_3 | #2.executor": "Run",
+    "HTTP 请求.scratch_4 | #1.executor": "Run",
+    "HTTP 请求.scratch_4 | #2.executor": "Run",
+    "HTTP 请求.scratch_4 | #3.executor": "Run",
+    "HTTP 请求.scratch_4 | #4.executor": "Run",
+    "HTTP 请求.scratch_4 | #5.executor": "Run",
+    "HTTP 请求.scratch_4 | #6.executor": "Run",
+    "HTTP 请求.scratch_4 | #7.executor": "Run",
+    "HTTP 请求.scratch_4 | #8.executor": "Run",
+    "HTTP 请求.scratch中的所有.executor": "Run",
+    "JUnit.ElasticsearchTest.deleteById.executor": "Run",
+    "JUnit.ElasticsearchTest.executor": "Run",
+    "JUnit.ElasticsearchTest.existsById.executor": "Run",
+    "JUnit.ElasticsearchTest.getMapping.executor": "Run",
+    "JUnit.ElasticsearchTest.get_crmkbsnew1_settings.executor": "Run",
+    "JUnit.ElasticsearchTest.save.executor": "Run",
+    "JUnit.ElasticsearchTest.search.executor": "Run",
+    "JUnit.ElasticsearchTest.search1.executor": "Run",
+    "JUnit.ElasticsearchTest.search1fuzzyQuery.executor": "Run",
+    "Maven.ZengjjscTestBoot [clean].executor": "Run",
+    "Maven.ZengjjscTestBoot [install].executor": "Run",
+    "Maven.ZengjjscTestBoot [package].executor": "Run",
+    "Maven.ZengjjscTestBootESDemo [clean].executor": "Run",
+    "Maven.ZengjjscTestBootESDemo [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.ZengjjscTestBootApplication.executor": "Run",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/新建临时文件": [
+      "HTTP Request"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Liberty\LibdertyOne\ZengjjscTestBoot\ZengjjscTestBootESDemo" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cn.example.zengjjsc.es.dto" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.ElasticsearchTest.search">
+    <configuration name="scratch | #6" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/scratch.http" index="6" requestIdentifier="#6" runType="运行单个请求">
+      <method v="2" />
+    </configuration>
+    <configuration name="scratch_4 | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/scratch_4.http" index="2" requestIdentifier="#2" runType="运行单个请求">
+      <method v="2" />
+    </configuration>
+    <configuration name="scratch_4 | #6" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/scratch_4.http" index="6" requestIdentifier="#6" runType="运行单个请求">
+      <method v="2" />
+    </configuration>
+    <configuration name="scratch_4 | #7" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/scratch_4.http" index="7" requestIdentifier="#7" runType="运行单个请求">
+      <method v="2" />
+    </configuration>
+    <configuration name="ElasticsearchTest.search" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ZengjjscTestBootESDemo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.example.zengjjsc.es.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.example.zengjjsc.es" />
+      <option name="MAIN_CLASS_NAME" value="cn.example.zengjjsc.es.ElasticsearchTest" />
+      <option name="METHOD_NAME" value="search" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ElasticsearchTest.search" />
+        <item itemvalue="HTTP 请求.scratch | #6" />
+        <item itemvalue="HTTP 请求.scratch_4 | #6" />
+        <item itemvalue="HTTP 请求.scratch_4 | #7" />
+        <item itemvalue="HTTP 请求.scratch_4 | #2" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="e877dca7-b5af-483f-b5e9-1ba066d93678" name="更改" comment="" />
+      <created>1721279661126</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1721279661126</updated>
+      <workItem from="1721279662190" duration="5554000" />
+      <workItem from="1721290665112" duration="8463000" />
+      <workItem from="1721300985260" duration="1744000" />
+      <workItem from="1721613392964" duration="46642000" />
+    </task>
+    <task id="LOCAL-00001" summary="init">
+      <option name="closed" value="true" />
+      <created>1721296892543</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1721296892543</updated>
+    </task>
+    <task id="LOCAL-00002" summary="init">
+      <option name="closed" value="true" />
+      <created>1721301748035</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1721301748035</updated>
+    </task>
+    <task id="LOCAL-00003" summary="init">
+      <option name="closed" value="true" />
+      <created>1721302292795</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1721302292795</updated>
+    </task>
+    <task id="LOCAL-00004" summary="init">
+      <option name="closed" value="true" />
+      <created>1721302557998</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1721302557998</updated>
+    </task>
+    <task id="LOCAL-00005" summary="init">
+      <option name="closed" value="true" />
+      <created>1721302713600</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1721302713600</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init" />
+    <option name="LAST_COMMIT_MESSAGE" value="init" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ZengjjscTestBootESDemo/src/test/java/cn/example/zengjjsc/es/ElasticsearchTest.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ZengjjscTestBootESDemo/src/test/java/cn/example/zengjjsc/es/ElasticsearchTest.java</url>
+          <line>196</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
