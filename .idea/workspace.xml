@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e877dca7-b5af-483f-b5e9-1ba066d93678" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/ZengjjscTestBootESDemo/src/main/java/cn/example/zengjjsc/es/dto/KbsPointEsModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/ZengjjscTestBootESDemo/src/main/java/cn/example/zengjjsc/es/dto/KbsPointEsModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ZengjjscTestBootESDemo/src/test/java/cn/example/zengjjsc/es/ElasticsearchClientCtrl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ZengjjscTestBootESDemo/src/test/java/cn/example/zengjjsc/es/ElasticsearchClientCtrl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ZengjjscTestBootESDemo/src/test/java/cn/example/zengjjsc/es/ElasticsearchTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ZengjjscTestBootESDemo/src/test/java/cn/example/zengjjsc/es/ElasticsearchTest.java" afterDir="false" />
+    <list default="true" id="e877dca7-b5af-483f-b5e9-1ba066d93678" name="更改" comment="init">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,6 +134,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Liberty\LibdertyOne\ZengjjscTestBoot\.idea\httpRequests" />
       <recent name="D:\Liberty\LibdertyOne\ZengjjscTestBoot\ZengjjscTestBootESDemo" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -192,7 +191,7 @@
       <workItem from="1721279662190" duration="5554000" />
       <workItem from="1721290665112" duration="8463000" />
       <workItem from="1721300985260" duration="1744000" />
-      <workItem from="1721613392964" duration="46642000" />
+      <workItem from="1721613392964" duration="47287000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -234,7 +233,39 @@
       <option name="project" value="LOCAL" />
       <updated>1721302713600</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="init">
+      <option name="closed" value="true" />
+      <created>1721717060086</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1721717060086</updated>
+    </task>
+    <task id="LOCAL-00007" summary="init">
+      <option name="closed" value="true" />
+      <created>1721717123420</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1721717123420</updated>
+    </task>
+    <task id="LOCAL-00008" summary="init">
+      <option name="closed" value="true" />
+      <created>1721717157817</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1721717157817</updated>
+    </task>
+    <task id="LOCAL-00009" summary="init">
+      <option name="closed" value="true" />
+      <created>1721717265058</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1721717265058</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
