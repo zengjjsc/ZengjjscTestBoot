@@ -1,3 +1,457 @@
+PUT http://10.132.21.221:19200/crmkbs1?pretty=
+Content-Type: application/json;charset=UTF-8
+Content-Length: 3547
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "settings": {
+    "analysis": {
+      "filter": {
+
+        "stop_filter": {
+          "ignore_case": "true",
+          "type": "stop",
+          "lenient": true,
+          "updateable":true,
+          "stopwords": [""]
+        },
+        "synonym_filter": {
+          "ignore_case": "true",
+          "expand": "true",
+          "type":"synonym_graph",
+          "lenient": true,
+          "updateable":true,
+          "synonyms_path":"analysis/synonyms.txt"
+        }
+      },
+      "analyzer": {
+        "text_complex": {
+          "filter": [
+            "stop_filter",
+            "synonym_filter",
+            "lowercase"
+          ],
+          "type": "custom",
+          "tokenizer": "standard"
+        },
+        "text_complex_index": {
+          "filter": [
+            "stop_filter",
+            "lowercase"
+          ],
+          "type": "custom",
+          "tokenizer": "standard"
+        }
+      }
+    }
+  },
+  "mappings": {
+    "properties": {
+      "content": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "contentHtml": {
+        "type": "text",
+        "analyzer": "text_complex_index",
+        "search_analyzer": "text_complex"
+      },
+      "createCode": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "createName": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "createtime": {
+        "type": "long"
+      },
+      "directoryId": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "keyWords": {
+        "type": "text",
+        "analyzer": "text_complex_index",
+        "search_analyzer": "text_complex"
+      },
+      "organId": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "organName": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "pointId": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "priority": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "remark": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "reviewReason": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "status": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "title": {
+        "type": "text",
+        "analyzer": "text_complex_index",
+        "search_analyzer": "text_complex"
+      },
+      "validEndDate": {
+        "type": "long"
+      },
+      "validStartDate": {
+        "type": "long"
+      }
+    }
+  }
+}
+
+<> 2024-07-23T155050.400.json
+
+###
+
+GET http://10.132.21.223:19200/_cat/indices?v=
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-07-23T155006.200.txt
+
+###
+
+GET http://10.132.21.221:19200/crmkbs?pretty=
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-07-23T154959.200.json
+
+###
+
+GET http://10.132.21.221:19200/crmkbs?pretty=
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-07-23T154955.200.json
+
+###
+
+GET http://10.132.21.221:19200/crmkbs?pretty=
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-07-23T154953.200.json
+
+###
+
+GET http://10.132.21.221:19200/crmkbs1/_search
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-07-23T154941.404.json
+
+###
+
+PUT http://10.132.21.221:19200/crmkbs1?pretty=
+Content-Type: application/json;charset=UTF-8
+Content-Length: 3547
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "settings": {
+    "analysis": {
+      "filter": {
+
+        "stop_filter": {
+          "ignore_case": "true",
+          "type": "stop",
+          "lenient": true,
+          "updateable":true,
+          "stopwords": [""]
+        },
+        "synonym_filter": {
+          "ignore_case": "true",
+          "expand": "true",
+          "type":"synonym_graph",
+          "lenient": true,
+          "updateable":true,
+          "synonyms_path":"analysis/synonyms.txt"
+        }
+      },
+      "analyzer": {
+        "text_complex": {
+          "filter": [
+            "stop_filter",
+            "synonym_filter",
+            "lowercase"
+          ],
+          "type": "custom",
+          "tokenizer": "standard"
+        },
+        "text_complex_index": {
+          "filter": [
+            "stop_filter",
+            "lowercase"
+          ],
+          "type": "custom",
+          "tokenizer": "standard"
+        }
+      }
+    }
+  },
+  "mappings": {
+    "properties": {
+      "content": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "contentHtml": {
+        "type": "text",
+        "analyzer": "text_complex_index",
+        "search_analyzer": "text_complex"
+      },
+      "createCode": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "createName": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "createtime": {
+        "type": "long"
+      },
+      "directoryId": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "keyWords": {
+        "type": "text",
+        "analyzer": "text_complex_index",
+        "search_analyzer": "text_complex"
+      },
+      "organId": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "organName": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "pointId": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "priority": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "remark": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "reviewReason": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "status": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "title": {
+        "type": "text",
+        "analyzer": "text_complex_index",
+        "search_analyzer": "text_complex"
+      },
+      "validEndDate": {
+        "type": "long"
+      },
+      "validStartDate": {
+        "type": "long"
+      }
+    }
+  }
+}
+
+<> 2024-07-23T145839.400.json
+
+###
+
+DELETE http://10.132.21.221:19200/crmkbs1?pretty=
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-07-23T145726.404.json
+
+###
+
+DELETE http://10.132.21.221:19200/crmkbs1?pretty=
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-07-23T145725.200.json
+
+###
+
+DELETE http://10.132.21.221:19200/crmkbsnew2?pretty=
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-07-23T145717.404.json
+
+###
+
+DELETE http://10.132.21.221:19200/crmkbsnew2?pretty=
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-07-23T145714.404.json
+
+###
+
+DELETE http://10.132.21.221:19200/crmkbsnew2?pretty=
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-07-23T145711.404.json
+
+###
+
 POST http://10.132.21.223:19200/crmkbs1/_analyze
 Content-Type: application/json;charset=UTF-8
 Content-Length: 56
@@ -1090,121 +1544,6 @@ User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
 <> 2024-07-22T224631.200.txt
-
-###
-
-GET http://10.132.21.223:19200/crmkbsnew2/_search
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-07-22T224553.200.json
-
-###
-
-GET http://10.132.21.222:19200/crmkbsnew2/_search
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-07-22T224544.200.json
-
-###
-
-GET http://10.132.21.221:19200/crmkbsnew2/_search
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-07-22T224533.200.json
-
-###
-
-GET http://10.132.21.223:19200/crmkbsnew2/_search
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-07-22T224521.200.json
-
-###
-
-POST http://10.132.21.221:19200/_reindex?pretty=
-Content-Type: application/json;charset=UTF-8
-Content-Length: 70
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "source": {"index": "crmkbs"},
-  "dest": {"index": "crmkbsnew2"}
-}
-
-<> 2024-07-22T224501.200.json
-
-###
-
-GET http://10.132.21.223:19200/crmkbs/_search
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-07-22T224403.200.json
-
-###
-
-GET http://10.132.21.222:19200/crmkbs/_search
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-07-22T224351.200.json
-
-###
-
-GET http://10.132.21.221:19200/crmkbs?pretty/_search=
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-07-22T224333.400.json
-
-###
-
-GET http://10.132.21.221:19200/crmkbs?pretty/_search=
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-07-22T224330.400.json
-
-###
-
-GET http://10.132.21.221:19200/crmkbs/_search
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-07-22T224314.200.json
-
-###
-
-GET http://10.132.21.221:19200/crmkbs/_search
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-07-22T224233.200.json
-
-###
-
-GET http://10.132.21.221:19200/crmkbsnew2/_search
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-07-22T224222.200.json
 
 ###
 
