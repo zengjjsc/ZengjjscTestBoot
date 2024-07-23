@@ -1,0 +1,25 @@
+{
+  "tokens": [
+    {
+      "token": "首",
+      "start_offset": 0,
+      "end_offset": 1,
+      "type": "<IDEOGRAPHIC>",
+      "position": 0
+    },
+    {
+      "token": "都",
+      "start_offset": 1,
+      "end_offset": 2,
+      "type": "<IDEOGRAPHIC>",
+      "position": 1
+    },
+    {
+      "token": "857505",
+      "start_offset": 2,
+      "end_offset": 8,
+      "type": "<NUM>",
+      "position": 2
+    }
+  ]
+}

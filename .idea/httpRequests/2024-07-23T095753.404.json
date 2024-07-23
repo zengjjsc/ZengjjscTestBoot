@@ -1,0 +1,21 @@
+{
+  "error": {
+    "root_cause": [
+      {
+        "type": "index_not_found_exception",
+        "reason": "no such index [crmkbsnew2]",
+        "resource.type": "index_or_alias",
+        "resource.id": "crmkbsnew2",
+        "index_uuid": "_na_",
+        "index": "crmkbsnew2"
+      }
+    ],
+    "type": "index_not_found_exception",
+    "reason": "no such index [crmkbsnew2]",
+    "resource.type": "index_or_alias",
+    "resource.id": "crmkbsnew2",
+    "index_uuid": "_na_",
+    "index": "crmkbsnew2"
+  },
+  "status": 404
+}

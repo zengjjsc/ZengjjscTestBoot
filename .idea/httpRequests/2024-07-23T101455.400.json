@@ -1,0 +1,13 @@
+{
+  "error": {
+    "root_cause": [
+      {
+        "type": "illegal_argument_exception",
+        "reason": "failed to find analyzer [ik_synonyms_search_analyzer]"
+      }
+    ],
+    "type": "illegal_argument_exception",
+    "reason": "failed to find analyzer [ik_synonyms_search_analyzer]"
+  },
+  "status": 400
+}

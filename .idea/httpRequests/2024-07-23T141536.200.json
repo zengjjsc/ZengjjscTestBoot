@@ -1,0 +1,105 @@
+{
+  "tokens": [
+    {
+      "token": "北",
+      "start_offset": 0,
+      "end_offset": 2,
+      "type": "SYNONYM",
+      "position": 0
+    },
+    {
+      "token": "京",
+      "start_offset": 0,
+      "end_offset": 2,
+      "type": "SYNONYM",
+      "position": 0,
+      "positionLength": 2
+    },
+    {
+      "token": "北",
+      "start_offset": 0,
+      "end_offset": 2,
+      "type": "SYNONYM",
+      "position": 0,
+      "positionLength": 3
+    },
+    {
+      "token": "上",
+      "start_offset": 0,
+      "end_offset": 2,
+      "type": "SYNONYM",
+      "position": 0,
+      "positionLength": 4
+    },
+    {
+      "token": "京",
+      "start_offset": 0,
+      "end_offset": 2,
+      "type": "SYNONYM",
+      "position": 0,
+      "positionLength": 5
+    },
+    {
+      "token": "首",
+      "start_offset": 0,
+      "end_offset": 1,
+      "type": "<IDEOGRAPHIC>",
+      "position": 0,
+      "positionLength": 6
+    },
+    {
+      "token": "京",
+      "start_offset": 0,
+      "end_offset": 2,
+      "type": "SYNONYM",
+      "position": 1,
+      "positionLength": 6
+    },
+    {
+      "token": "城",
+      "start_offset": 0,
+      "end_offset": 2,
+      "type": "SYNONYM",
+      "position": 2,
+      "positionLength": 5
+    },
+    {
+      "token": "平",
+      "start_offset": 0,
+      "end_offset": 2,
+      "type": "SYNONYM",
+      "position": 3,
+      "positionLength": 4
+    },
+    {
+      "token": "面",
+      "start_offset": 0,
+      "end_offset": 2,
+      "type": "SYNONYM",
+      "position": 4,
+      "positionLength": 3
+    },
+    {
+      "token": "都",
+      "start_offset": 0,
+      "end_offset": 2,
+      "type": "SYNONYM",
+      "position": 5,
+      "positionLength": 2
+    },
+    {
+      "token": "都",
+      "start_offset": 1,
+      "end_offset": 2,
+      "type": "<IDEOGRAPHIC>",
+      "position": 6
+    },
+    {
+      "token": "857505",
+      "start_offset": 2,
+      "end_offset": 8,
+      "type": "<NUM>",
+      "position": 7
+    }
+  ]
+}

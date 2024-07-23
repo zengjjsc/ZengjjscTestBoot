@@ -1,0 +1,53 @@
+{
+  "tokens": [
+    {
+      "token": "北京",
+      "start_offset": 0,
+      "end_offset": 2,
+      "type": "SYNONYM",
+      "position": 0
+    },
+    {
+      "token": "京城",
+      "start_offset": 0,
+      "end_offset": 2,
+      "type": "SYNONYM",
+      "position": 0
+    },
+    {
+      "token": "北平",
+      "start_offset": 0,
+      "end_offset": 2,
+      "type": "SYNONYM",
+      "position": 0
+    },
+    {
+      "token": "上面",
+      "start_offset": 0,
+      "end_offset": 2,
+      "type": "SYNONYM",
+      "position": 0
+    },
+    {
+      "token": "京都",
+      "start_offset": 0,
+      "end_offset": 2,
+      "type": "SYNONYM",
+      "position": 0
+    },
+    {
+      "token": "首都",
+      "start_offset": 0,
+      "end_offset": 2,
+      "type": "CN_WORD",
+      "position": 0
+    },
+    {
+      "token": "857505",
+      "start_offset": 2,
+      "end_offset": 8,
+      "type": "ARABIC",
+      "position": 1
+    }
+  ]
+}

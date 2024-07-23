@@ -1,0 +1,17 @@
+{
+  "error": {
+    "root_cause": [
+      {
+        "type": "resource_already_exists_exception",
+        "reason": "index [crmkbsnew2/tylDHO6ZSROuFEycraddDw] already exists",
+        "index_uuid": "tylDHO6ZSROuFEycraddDw",
+        "index": "crmkbsnew2"
+      }
+    ],
+    "type": "resource_already_exists_exception",
+    "reason": "index [crmkbsnew2/tylDHO6ZSROuFEycraddDw] already exists",
+    "index_uuid": "tylDHO6ZSROuFEycraddDw",
+    "index": "crmkbsnew2"
+  },
+  "status": 400
+}
