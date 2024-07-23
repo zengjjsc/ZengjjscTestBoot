@@ -4,9 +4,11 @@ package cn.example.zengjjsc.es;
 import cn.example.zengjjsc.es.dto.KbsPointEsModel;
 import co.elastic.clients.elasticsearch.ElasticsearchClient;
 import co.elastic.clients.elasticsearch._types.query_dsl.BoolQuery;
+import co.elastic.clients.elasticsearch._types.query_dsl.FuzzyQuery;
 import co.elastic.clients.elasticsearch._types.query_dsl.TextQueryType;
 import co.elastic.clients.elasticsearch.core.DeleteResponse;
 import co.elastic.clients.elasticsearch.core.IndexResponse;
+import co.elastic.clients.elasticsearch.core.SearchRequest;
 import co.elastic.clients.elasticsearch.core.SearchResponse;
 import co.elastic.clients.elasticsearch.core.search.Hit;
 import co.elastic.clients.elasticsearch.indices.GetIndicesSettingsResponse;
@@ -49,21 +51,23 @@ public class ElasticsearchTest implements ElasticsearchClientCtrl {
         KbsPointEsModel model = new KbsPointEsModel();
         model.setPointId(String.valueOf(random.nextInt(1000000)));
 
-        model.setTitle("标题 " + model.getPointId());
-        model.setOrganId("Organ " + model.getPointId());
-        model.setOrganName("OrganName " + model.getPointId());
-        model.setCreateCode("CreateCode " + model.getPointId());
-        model.setCreateName("CreateName " + model.getPointId());
+        model.setTitle("吃饭" + model.getPointId());
+        model.setOrganId("Organ" + model.getPointId());
+        model.setOrganName("OrganName" + model.getPointId());
+        model.setCreateCode("CreateCode" + model.getPointId());
+        model.setCreateName("CreateName" + model.getPointId());
         model.setCreatetime(new Date());
-        model.setDirectoryId("Directory " + model.getPointId());
-        model.setContent("Content " + model.getPointId());
-        model.setContentHtml("ContentHtml " + model.getPointId());
+        model.setDirectoryId("Directory" + model.getPointId());
+        model.setContent("Content" + model.getPointId());
+        model.setContentHtml("吃饭" + model.getPointId());
+        //model.setContentHtml2("中国2" + model.getPointId());
         model.setPageView(random.nextInt(100));
-        model.setPriority("Priority " + model.getPointId());
-        model.setKeyWords("KeyWords " + model.getPointId());
-        model.setRemark("Remark " + model.getPointId());
+        model.setPriority("Priority" + model.getPointId());
+        model.setKeyWords("吃饭" + model.getPointId());
+       // model.setKeyWords2("中国2" + model.getPointId());
+        model.setRemark("Remark" + model.getPointId());
 
-        model.setStatus("2 ");
+        model.setStatus("2");
         model.setValidStartDate(new Date());
         model.setValidEndDate(new Date());
         model.setReviewReason("审核意见");
@@ -71,7 +75,7 @@ public class ElasticsearchTest implements ElasticsearchClientCtrl {
 
         ElasticsearchClient client = getElasticsearchClient();
         IndexResponse indexResponse = client.index(i -> i
-                .index("crmkbsnew1")
+                .index("crmkbs1")
                 //设置id
                 .id(model.getPointId())
                 //传入user对象
@@ -86,7 +90,7 @@ public class ElasticsearchTest implements ElasticsearchClientCtrl {
      */
     @Test
     public void deleteById() throws IOException {
-        String id = "0001";
+        String id ="0001";
         ElasticsearchClient client = getElasticsearchClient();
         DeleteResponse deleteResponse = client.delete(d -> d
                 .index("crmkbsnew1")
@@ -101,7 +105,7 @@ public class ElasticsearchTest implements ElasticsearchClientCtrl {
      */
     @Test
     public void existsById() throws IOException {
-        String id = "";
+        String id ="";
         ElasticsearchClient client = getElasticsearchClient();
         boolean have = true;
 
@@ -111,19 +115,46 @@ public class ElasticsearchTest implements ElasticsearchClientCtrl {
         System.out.println("crmkbsnew1 根据ID判断存在:" + have);
     }
 
+
     /**
      * 搜索
      * @throws IOException
      */
-    public  void search() throws IOException {
+    @Test
+    public  void search1fuzzyQuery() throws IOException {
+        ElasticsearchClient client = getElasticsearchClient();
+        String[] keyWordArr = {"国家","北平","2.5"};
+        SearchRequest.Builder request = new SearchRequest.Builder();
+        FuzzyQuery.Builder fuzzyQuery = new FuzzyQuery.Builder();
+        for (String keyword : keyWordArr) {
+            fuzzyQuery.field("title").value(keyword).fuzziness("1");
+            fuzzyQuery.field("keyWords").value(keyword).fuzziness("1");
+            fuzzyQuery.field("contentHtml").value(keyword).fuzziness("1");
+        }
+        request.index("crmkbs1")
+                .query(q-> q.fuzzy(fuzzyQuery.build()))
+                .from(0)
+                .size(100);
+        SearchResponse<KbsPointEsModel> hits = client.search(request.build(), KbsPointEsModel.class);
+        List<KbsPointEsModel> reList =  hits.hits().hits().stream().map(Hit::source).toList();
+        System.out.println("search1fuzzyQuery 搜索 :" + reList);
+    }
+
+
+    /**
+     * 搜索
+     * @throws IOException
+     */
+    @Test
+    public  void search1() throws IOException {
         ElasticsearchClient client = getElasticsearchClient();
 
-        String[] keyWordArr = {"",""};
+        String[] keyWordArr = {"茄科","马铃薯"};
         BoolQuery.Builder boolQueryBuilder = new BoolQuery.Builder();
         for (String keyword : keyWordArr) {
             boolQueryBuilder.must(m -> m
                     .multiMatch(t -> t
-                            .fields("title", "keyWords", "contentHtml")
+                            .fields("title")
                             .query(keyword)
                             .type(TextQueryType.Phrase)
                     )
@@ -131,7 +162,7 @@ public class ElasticsearchTest implements ElasticsearchClientCtrl {
         }
 
         SearchResponse<KbsPointEsModel> hits = client.search(s -> s
-                .index("crmkbs")
+                .index("crmkbs1")
                 .query(q -> q.bool(boolQueryBuilder.build()))
                 .from(0)
                 .size(100), KbsPointEsModel.class
@@ -139,6 +170,39 @@ public class ElasticsearchTest implements ElasticsearchClientCtrl {
 
         List<KbsPointEsModel> reList =  hits.hits().hits().stream().map(Hit::source).toList();
         System.out.println("crmkbsnew1 搜索 :" + reList);
+
+
+    }
+    
+    /**
+     * 搜索
+     * @throws IOException
+     */
+    @Test
+    public  void search() throws IOException {
+        ElasticsearchClient client = getElasticsearchClient();
+
+        String[] keyWordArr = {"茄科","马铃薯"};
+        BoolQuery.Builder boolQueryBuilder = new BoolQuery.Builder();
+        for (String keyword : keyWordArr) {
+            boolQueryBuilder.must(m -> m
+                    .multiMatch(t -> t
+                            .fields("title","keyWords","contentHtml")
+                            .query(keyword)
+                            .type(TextQueryType.Phrase)
+                    )
+            );
+        }
+       
+        SearchResponse<KbsPointEsModel> hits = client.search(s -> s
+                .index("crmkbs1")
+                .query(q -> q.bool(boolQueryBuilder.build()))
+                .from(0)
+                .size(100), KbsPointEsModel.class
+        );
+
+        List<KbsPointEsModel> reList =  hits.hits().hits().stream().map(Hit::source).toList();
+        System.out.println("crmkbs1 搜索 :" + reList);
         
         
     }
@@ -153,7 +217,7 @@ public class ElasticsearchTest implements ElasticsearchClientCtrl {
     @Test
     public void getMapping() throws IOException {
         ElasticsearchClient client = getElasticsearchClient();
-        GetMappingResponse crmkbsnew1 = client.indices().getMapping(e -> e.index("crmkbsnew1"));
+        GetMappingResponse crmkbsnew1 = client.indices().getMapping(e -> e.index("crmkbs1"));
         System.out.println("crmkbsnew1 获取  Mappings:" + crmkbsnew1);
     }
     

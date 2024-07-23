@@ -61,6 +61,7 @@ public class KbsPointEsModel {
      * 内容，包含格式
      */
     private String contentHtml;
+    //private String contentHtml2;
 
     /**
      * 点击量
@@ -76,6 +77,7 @@ public class KbsPointEsModel {
      * 关键字
      */
     private String keyWords;
+    //private String keyWords2;
 
     /**
      * 备注
